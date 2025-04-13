@@ -62,20 +62,25 @@
     <source src="music.mp3" type="audio/mpeg">
     مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
   </audio>
-  
+
   <button onclick="document.getElementById('bgmusic').play()" style="z-index:3;position:absolute;top:20px;left:20px;padding:10px;background:#fff;border:none;border-radius:10px;cursor:pointer;">
     ▶️ پخش موزیک
   </button>
-  
+
   <video autoplay loop muted>
     <source src="video.mp4" type="video/mp4" />
     مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
   </video>
 
-  <div class="content">
+ <div class="content">
     <h1>به مهرانادارکی خوش اومدید</h1>
     <h2>دانلود</h2>
-    <a href="file.zip" class="download-link" download>دانلود فایل</a>
+    <a class="" onclick="downloadFile()>دانلود فایل</a>
   </div>
 </body>
+<script>
+    function downloadFile() {
+        window.open("https://github.com/unrealsuffer/shadow-01/releases/download/minecraft/kubban-s-farmland.zip", "_blank");
+    }
+  </script>
 </html>
