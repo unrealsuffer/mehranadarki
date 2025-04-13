@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>به مهرانادارکی خوش اومدید</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: white;
+      font-family: sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
 
+    h1, h2 {
+      z-index: 2;
+      text-shadow: 0 0 5px black;
+    }
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      opacity: 0.5;
+    }
+
+    .content {
+      z-index: 2;
+      text-align: center;
+    }
+
+    a.download-link {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      background: #ffffff22;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1px solid white;
+    }
+
+    a.download-link:hover {
+      background: #ffffff44;
+    }
+  </style>
+</head>
+<body>
+  <!-- ویدیو پس‌زمینه -->
+  <video autoplay loop muted>
+    <source src="video.mp4" type="video/mp4" />
+    مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+  </video>
+
+  <div class="content">
+    <h1>به مهرانادارکی خوش اومدید</h1>
+    <h2>دانلود</h2>
+    <!-- لینک دانلود -->
+    <a href="file.zip" class="download-link" download>دانلود فایل</a>
+  </div>
+</body>
+</html>
