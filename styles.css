@@ -3,84 +3,85 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Tahoma', sans-serif;
-    background: #000000; /* پس‌زمینه مشکی */
-    overflow: hidden;
-    position: relative;
+    background-color: white;
+    transition: background-color 1s ease-in-out;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff; /* رنگ متن سفید */
-}
-
-/* نوشته پس‌زمینه */
-.background-text {
-    font-size: 30px; /* اندازه متن رو کوچیکتر می‌کنیم */
-    position: absolute;
-    color: rgba(255, 255, 255, 0.2); /* رنگ روشن‌تر برای متن */
-    z-index: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
-}
-
-.background-text:hover {
-    cursor: pointer;
-}
-
-/* استایل برای بخش جدید */
-.music-container {
-    z-index: 1;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* عنوان بخش دانلود */
-.music-container h1 {
-    margin-bottom: 20px;
+    flex-direction: column;
+    overflow: hidden;
     color: #333;
 }
 
-/* دکمه دانلود ریسورس پک */
-.music-container .download {
-    margin: 10px;
-    padding: 10px 20px;
+/* استایل خوش آمد گویی */
+.welcome {
+    text-align: center;
+    font-size: 24px;
+    z-index: 10;
+}
+
+.welcome h1 {
+    font-size: 36px;
+    animation: fadeIn 2s ease;
+}
+
+.welcome p {
     font-size: 18px;
-    cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    animation: fadeIn 2s ease;
+    animation-delay: 1s;
 }
 
-.music-container .download:hover {
-    background-color: #45a049;
-}
-
-/* نمایش پیام */
-.message {
-    display: none;
-    font-size: 18px;
-    color: #ff5733;
-    margin-top: 20px;
-}
-
-/* افکت موس */
-.background-text:hover {
-    animation: moveText 1s forwards;
-}
-
-@keyframes moveText {
+/* افکت ظاهر شدن */
+@keyframes fadeIn {
     0% {
-        top: 50%;
-        left: 50%;
+        opacity: 0;
     }
     100% {
-        top: calc(50% - 50px);
-        left: calc(50% + 50px);
+        opacity: 1;
     }
+}
+
+/* استایل برای آیکون ماه و خورشید */
+.icon-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* موزیک پلیر */
+.music-player {
+    position: absolute;
+    bottom: 20px;
+    z-index: 5;
+}
+
+/* افکت رگ‌های خون */
+#blood-vessels {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.example.com/blood_vessel_texture.png') repeat;
+    background-size: cover;
+    z-index: 0;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+/* استایل برای دکمه‌ها */
+.icon {
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 50px;
+}
+
+/* استایل برای ساعت و دما */
+#datetime, #temperature {
+    font-size: 16px;
+    color: #ff0000;
 }
