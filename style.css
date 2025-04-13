@@ -1,52 +1,57 @@
-   body {
-      margin: 0;
-      padding: 0;
-      background: #000;
-      color: white;
-      font-family: sans-serif;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    h1 {
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: white;
   font-family: 'Vazirmatn', sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.content {
+  z-index: 2;
+  text-align: center;
+}
+
+h1 {
   font-size: 3rem;
-  animation: fadeIn 2s ease-in-out;
   color: #fff;
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #fff;
+  width: 0;
+  animation: typing 4s steps(30, end) forwards, blink 0.75s step-end infinite;
 }
 
-    video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
-      z-index: 1;
-      opacity: 0.5;
-    }
+@keyframes typing {
+  from { width: 0 }
+  to { width: 26ch }
+}
 
-    .content {
-      z-index: 2;
-      text-align: center;
-    }
+@keyframes blink {
+  0%, 100% { border-color: transparent }
+  50% { border-color: white }
+}
 
 .download-button {
   display: inline-block;
@@ -59,10 +64,7 @@
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-top: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: background-color 0.3s ease;
 }
@@ -71,3 +73,38 @@
   background-color: #45a049;
 }
 
+.music-button {
+  z-index: 3;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px;
+  background: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* ---- Cubes Animation (UIverse) ---- */
+.cubes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+}
+
+.loop {
+  transform: rotateX(-35deg) rotateY(-45deg) translateZ(1.5625em);
+}
+
+@keyframes s {
+  to {
+    transform: scale3d(0.2, 0.2, 0.2);
+  }
+}
+
+.item {
+  margin: -1.5625em;
+  width: 3.125em;
+  height: 3.125em;
+  transform-origin: 50% 50% -1.562
