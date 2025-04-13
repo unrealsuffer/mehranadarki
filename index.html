@@ -1,48 +1,36 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>به مهرانادارکی خوش اومدید</title>
-  <link rel="stylesheet" href="style.css"> 
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سایت دانلود و گوش دادن به آهنگ</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-  
 <body>
-  <audio id="bgmusic" loop>
-    <source src="music.mp3" type="audio/mpeg">
-    مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
-  </audio>
 
-  <button onclick="document.getElementById('bgmusic').play()" class="music-button">
-    ▶️ پخش موزیک
-  </button>
+    <div class="background-text" id="backgroundText">
+        امیر دوست دارم یک سال صبر
+    </div>
 
-  <video autoplay loop muted>
-    <source src="video.mp4" type="video/mp4" />
-    مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-  </video>
+    <div class="music-container">
+        <h1>بخش گوش دادن به آهنگ</h1>
+        <button class="download">دانلود آهنگ</button>
+        <button class="play">پخش آهنگ</button>
+        <p class="message" id="message">روی نوشته کلیک کن تا آرزو برآورده بشه!</p>
+    </div>
 
-  <div class="content">
-    <h1 class="typing">به مهرانادارکی خوش اومدید</h1>
-    <h2>دانلود</h2>
-    <a class="download-button" onclick="downloadFile()">دانلود فایل</a>
-  </div>
+    <script>
+        const backgroundText = document.getElementById("backgroundText");
+        const message = document.getElementById("message");
 
-  <!-- UIverse Cubes Animation -->
-  <div class="loop cubes">
-    <div class="item cubes"></div>
-    <div class="item cubes"></div>
-    <div class="item cubes"></div>
-    <div class="item cubes"></div>
-    <div class="item cubes"></div>
-    <div class="item cubes"></div>
-  </div>
+        backgroundText.addEventListener("mouseover", () => {
+            message.style.display = "block";
+        });
 
-  <script>
-    function downloadFile() {
-      window.open("https://github.com/unrealsuffer/shadow-01/releases/download/minecraft/kubban-s-farmland.zip", "_blank");
-    }
-  </script>
+        backgroundText.addEventListener("click", () => {
+            alert("آرزوی شما برآورده شد!");
+        });
+    </script>
+
 </body>
 </html>
