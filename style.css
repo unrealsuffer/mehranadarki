@@ -1,1 +1,50 @@
+   body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: white;
+      font-family: sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
 
+    h1, h2 {
+      z-index: 2;
+      text-shadow: 0 0 5px black;
+    }
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      opacity: 0.5;
+    }
+
+    .content {
+      z-index: 2;
+      text-align: center;
+    }
+
+    a.download-link {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      background: #ffffff22;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1px solid white;
+    }
+
+    a.download-link:hover {
+      background: #ffffff44;
+    }
