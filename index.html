@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@700&display=swap" rel="stylesheet">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>به مهرانادارکی خوش اومدید</title>
   <link rel="stylesheet" href="style.css"> 
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@700&display=swap" rel="stylesheet">
 </head>
   
 <body>
@@ -14,7 +14,7 @@
     مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
   </audio>
 
-  <button onclick="document.getElementById('bgmusic').play()" style="z-index:3;position:absolute;top:20px;left:20px;padding:10px;background:#fff;border:none;border-radius:10px;cursor:pointer;">
+  <button onclick="document.getElementById('bgmusic').play()" class="music-button">
     ▶️ پخش موزیک
   </button>
 
@@ -23,15 +23,26 @@
     مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
   </video>
 
- <div class="content">
-    <h1>به مهرانادارکی خوش اومدید</h1>
+  <div class="content">
+    <h1 class="typing">به مهرانادارکی خوش اومدید</h1>
     <h2>دانلود</h2>
     <a class="download-button" onclick="downloadFile()">دانلود فایل</a>
   </div>
-</body>
-<script>
+
+  <!-- UIverse Cubes Animation -->
+  <div class="loop cubes">
+    <div class="item cubes"></div>
+    <div class="item cubes"></div>
+    <div class="item cubes"></div>
+    <div class="item cubes"></div>
+    <div class="item cubes"></div>
+    <div class="item cubes"></div>
+  </div>
+
+  <script>
     function downloadFile() {
-        window.open("https://github.com/unrealsuffer/shadow-01/releases/download/minecraft/kubban-s-farmland.zip", "_blank");
+      window.open("https://github.com/unrealsuffer/shadow-01/releases/download/minecraft/kubban-s-farmland.zip", "_blank");
     }
   </script>
+</body>
 </html>
