@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سایت دانلود ریسورس پک سرور</title>
+    <title>مهرانا دارکی</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="background-text" id="backgroundText">
-        امیر دوست دارم یک سال صبر
+    <!-- بخشی برای خوش آمد گویی -->
+    <div class="welcome">
+        <h1>مهرانا دارکی خوش آمدید</h1>
+        <p>این یک عشق حقیقی</p>
+        <p id="datetime"></p>
+        <p id="temperature"></p>
     </div>
 
-    <div class="music-container">
-        <h1>بخش دانلود ریسورس پک سرور</h1>
-        <button class="download">دانلود ریسورس پک</button>
-        <p class="message" id="message">روی نوشته کلیک کن تا آرزو برآورده بشه!</p>
+    <!-- آیکون ماه و خورشید -->
+    <div class="icon-container">
+        <span id="moon" class="icon" onclick="toggleTheme()">🌙</span>
+        <span id="sun" class="icon" style="display:none;" onclick="toggleTheme()">🌞</span>
     </div>
 
-    <script>
-        const backgroundText = document.getElementById("backgroundText");
-        const message = document.getElementById("message");
+    <!-- موزیک پلیر -->
+    <div class="music-player">
+        <audio controls>
+            <source src="https://example.com/your_music_link.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
 
-        backgroundText.addEventListener("mouseover", () => {
-            message.style.display = "block";
-        });
+    <!-- افکت رگ‌های خون -->
+    <div id="blood-vessels"></div>
 
-        backgroundText.addEventListener("click", () => {
-            alert("آرزوی شما برآورده شد!");
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
