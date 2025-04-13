@@ -3,20 +3,21 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Tahoma', sans-serif;
-    background: #f0f0f0;
+    background: #000000; /* پس‌زمینه مشکی */
     overflow: hidden;
     position: relative;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff; /* رنگ متن سفید */
 }
 
 /* نوشته پس‌زمینه */
 .background-text {
-    font-size: 60px;
+    font-size: 30px; /* اندازه متن رو کوچیکتر می‌کنیم */
     position: absolute;
-    color: rgba(0, 0, 0, 0.1);
+    color: rgba(255, 255, 255, 0.2); /* رنگ روشن‌تر برای متن */
     z-index: 0;
     top: 50%;
     left: 50%;
@@ -28,7 +29,7 @@ body {
     cursor: pointer;
 }
 
-/* استایل برای بخش موسیقی */
+/* استایل برای بخش جدید */
 .music-container {
     z-index: 1;
     text-align: center;
@@ -38,12 +39,14 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* عنوان و دکمه‌ها */
+/* عنوان بخش دانلود */
 .music-container h1 {
     margin-bottom: 20px;
+    color: #333;
 }
 
-.music-container .download, .music-container .play {
+/* دکمه دانلود ریسورس پک */
+.music-container .download {
     margin: 10px;
     padding: 10px 20px;
     font-size: 18px;
@@ -54,7 +57,7 @@ body {
     border-radius: 5px;
 }
 
-.music-container .download:hover, .music-container .play:hover {
+.music-container .download:hover {
     background-color: #45a049;
 }
 
