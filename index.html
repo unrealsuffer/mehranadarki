@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سایت من</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-messaging.js"></script>
+  
+  <script>
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCATAyxXMDtMfCTudQ1c0GJyBL1wbN0ikM",
+      authDomain: "mehranadarki.firebaseapp.com",
+      projectId: "mehranadarki",
+      storageBucket: "mehranadarki.firebasestorage.app",
+      messagingSenderId: "871012562306",
+      appId: "1:871012562306:web:e1496adb540c015a290b9b",
+      measurementId: "G-1BTJJZEP4P"
+    };
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    const messaging = firebase.messaging();
+  </script>
+</head>
+<body>
+  <header>
+    <h1>به سایت من خوش آمدید!</h1>
+  </header>
+  
+  <div class="container">
+    <h2>پلی‌لیست اسپاتیفای</h2>
+    <iframe
+      title="Spotify Embed: Playlist"
+      src="https://open.spotify.com/embed/playlist/7jte2M9CTIshwYLEESJ0gF?utm_source=generator&theme=0"
+      width="100%"
+      height="380"
+      frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+    ></iframe>
+
+    <!-- فرم ثبت‌نام -->
+    <form id="registerForm">
+      <input type="email" id="registerEmail" placeholder="ایمیل" required>
+      <input type="password" id="registerPassword" placeholder="رمز عبور" required>
+      <button type="submit">ثبت‌نام</button>
+    </form>
+
+    <!-- فرم ورود -->
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="ایمیل" required>
+      <input type="password" id="loginPassword" placeholder="رمز عبور" required>
+      <button type="submit">ورود</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>ساخته شده با عشق توسط آرین</p>
+  </footer>
+
+  <!-- Firebase SDKs (برای جاوااسکریپت‌های Firebase) -->
+  <script src="script.js"></script>
+
+  <!-- Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/firebase-messaging-sw.js')
+        .then(reg => console.log('Service Worker Registered:', reg.scope))
+        .catch(err => console.error('SW registration failed:', err));
+    }
+  </script>
+</body>
+</html>
