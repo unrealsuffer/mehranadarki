@@ -1,62 +1,35 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>مهرانا دارکی</title>
-  <link rel="stylesheet" href="main.css">
-</head>
 <body>
-  <div id="loading-screen">
+  <div id="loading-screen" style="text-align:center; padding:2rem;">
     <h2>در حال دانلود فایل‌ها...</h2>
     <p>یه موزیک انتظار پخش میشه تا سایت بالا بیاد :)</p>
     <audio src="waiting.mp3" autoplay loop></audio>
-    <p>✨ جوک: چرا مرغ از خیابون رد شد؟ چون اون ورش مهم بود ✨</p>
+    <p>✨جوک: یک روز مهرانا خورد توی دیوار✨</p>
+    <p id="countdown">۳</p>
+    <div style="width: 100%; background: #eee; height: 10px; border-radius: 5px; overflow: hidden; margin-top: 1rem;">
+      <div id="progress-bar" style="height: 100%; width: 0%; background: #f06292;"></div>
+    </div>
   </div>
 
-  <div id="menu">
-    <ul>
-      <li>خانه</li>
-      <li>چت</li>
-      <li>اخبار</li>
-      <li>تنظیمات</li>
-    </ul>
+  <div id="main-content" style="display: none;">
+    <!-- بقیه‌ی سایتت اینجا میاد (از menu تا footer) -->
+    <!-- ... این همون کدی هست که فرستادی ... -->
   </div>
 
-  <header>به مهرانا دارکی خوش اومدید</header>
+  <script>
+    let countdown = 3;
+    const countdownEl = document.getElementById("countdown");
+    const progressBar = document.getElementById("progress-bar");
 
-  <div id="weather">در حال بارگذاری دما و ساعت شما...</div>
+    const interval = setInterval(() => {
+      countdown--;
+      countdownEl.innerText = countdown;
+      progressBar.style.width = `${(3 - countdown) * 33.33}%`;
 
-  <div class="news">
-    <h3>اخبار</h3>
-    <p class="name" onclick="alert('دوست دارم')">آراد</p>
-    <p class="name" onclick="alert('شهوت واقعی')">امیر</p>
-    <p class="name" onclick="alert('جک اس 😆 بوس بوس 😘')">آرتین</p>
-  </div>
-
-  <div id="chat">
-    <h3>💬 چت عمومی</h3>
-    <div id="messages" style="height:200px; overflow-y:scroll; border:1px solid #555; padding:1rem; margin-bottom:1rem;"></div>
-    <input type="text" id="username" placeholder="نام شما" />
-    <input type="text" id="message" placeholder="پیام شما" />
-    <button onclick="sendMessage()">ارسال</button>
-  </div>
-
-  <div id="love-message" style="text-align:center; margin:2rem 0; font-size:1.5rem; color:#d63384;">
-  علی دوست دارم 💖
-</div>
-
-
-  <div id="music-player">
-    <audio id="audio-player" controls></audio>
-    <select id="playlist" onchange="loadTrack()"></select>
-  </div>
-
-  <footer style="text-align:center; margin-top:3rem;">
-    سایت توسط <strong>unrealsuffer</strong> ساخته شده — دیسکورد: <strong>bloodlust.exe</strong><br>
-    پشتیبانی: به این آیدی پیام بدید ❤️
-  </footer>
-
-  <script src="main.js"></script>
+      if (countdown === 0) {
+        clearInterval(interval);
+        document.getElementById("loading-screen").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+      }
+    }, 1000);
+  </script>
 </body>
-</html>
